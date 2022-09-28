@@ -1,0 +1,41 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.centered-top{
+  text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.footer-padding {
+	padding-bottom: 0%;
+}
+
+.footer {
+	position: fixed;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #689cef;
+  font-size: 1em;
+}
+
+.footer p {
+	margin-top: 25px;
+  font-size: x-large;
+  font-family: 'Roboto Mono', monospace;  
+  color: rgb(14, 11, 11);
+}
