@@ -115,7 +115,7 @@ app.post("/submit",(req,res)=>
     
     secretins.save();
 
-    res.render("submit");
+    res.render("success");
     
 })
 
