@@ -104,7 +104,11 @@ app.get("/success", (req,res)=>
 
 app.get("/confessions", (req,res)=>
 {
-    res.render("confessions");
+    secretsModel.find({},(err,list)=>{
+        console.log(res);
+        res.render("confessions",{list:list});
+    });
+    
 })
 
 app.post("/submit",(req,res)=>
@@ -112,7 +116,6 @@ app.post("/submit",(req,res)=>
     const secretins = new secretsModel({
         secrets: req.body.secret
     })
-    
     secretins.save();
 
     res.render("success");

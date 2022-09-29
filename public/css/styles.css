@@ -32,10 +32,17 @@ body {
 	background-color: #689cef;
   font-size: 1em;
 }
-
 .footer p {
 	margin-top: 25px;
   font-size: x-large;
   font-family: 'Roboto Mono', monospace;  
   color: rgb(14, 11, 11);
+}
+.confessions{
+  
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+
 }
