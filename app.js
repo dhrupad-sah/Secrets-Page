@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//mongoose.connect("mongodb+srv://dhrupad_sah:hvdycohKVGEnDtop@cluster0.8gepm9r.mongodb.net/secretsDB2",{useNewUrlParser: true});
-mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://dhrupad_sah:hvdycohKVGEnDtop@cluster0.8gepm9r.mongodb.net/secretsDB2",{useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
 
 const loginSchema = new mongoose.Schema({
     _id: String,
