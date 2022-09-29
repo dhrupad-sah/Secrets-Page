@@ -1,6 +1,5 @@
-
 body {
-  background-color: #E8ECEF;
+    background-color: #e8ecef;
 }
 
 .centered {
@@ -8,41 +7,50 @@ body {
     text-align: center;
 }
 
-.centered-top{
-  text-align: center;
+.centered-top {
+    text-align: center;
 }
 
 .secret-text {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  background-color: #000;
-}
-
-.footer-padding {
-	padding-bottom: 0%;
-}
-
-.footer {
-	position: fixed;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #689cef;
-  font-size: 1em;
-}
-.footer p {
-	margin-top: 25px;
-  font-size: x-large;
-  font-family: 'Roboto Mono', monospace;  
-  color: rgb(14, 11, 11);
-}
-.confessions{
-  
     text-align: center;
     font-size: 2rem;
     color: #fff;
     background-color: #000;
+}
 
+.footer-padding {
+    padding-bottom: 0%;
+}
+
+.footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #689cef;
+    font-size: 1em;
+}
+.footer p {
+    margin-top: 25px;
+    font-size: x-large;
+    font-family: "Roboto Mono", monospace;
+    color: rgb(14, 11, 11);
+}
+.confessions {
+    width: 60%;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+
+.align {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
