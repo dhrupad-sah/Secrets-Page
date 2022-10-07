@@ -1,8 +1,12 @@
 //jshint esversion:6
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser")
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
+const md5 = require("md5");
+
 
 const app = express();
 
@@ -13,17 +17,20 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-mongoose.connect("mongodb+srv://dhrupad_sah:hvdycohKVGEnDtop@cluster0.8gepm9r.mongodb.net/secretsDB2",{useNewUrlParser: true});
-//mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
+//mongoose.connect("mongodb+srv://dhrupad_sah:hvdycohKVGEnDtop@cluster0.8gepm9r.mongodb.net/secretsDB2",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
 
 const loginSchema = new mongoose.Schema({
-    _id: String,
+    email: String,
     password: String,
 });
 
 const secretsSchema = new mongoose.Schema({
     secrets:String
-})
+});
+
+
+loginSchema.plugin(encrypt,{secret: process.env.SECRET,encryptedFields: ["password"]});
 
 const loginModel = new mongoose.model("loginModel", loginSchema);
 
@@ -32,8 +39,8 @@ const secretsModel = new mongoose.model("secretsModel", secretsSchema);
 app.post("/register",(req,res)=>{
 
     const loginCreds = new loginModel ({
-        _id: req.body.username,
-        password: req.body.password
+        email: req.body.username,
+        password: md5(req.body.password)
     })
 
     loginCreds.save((e)=>
@@ -52,16 +59,24 @@ app.post("/register",(req,res)=>{
 app.post("/login",(req,res)=>{
 
     const emailA = req.body.username;
-    const passwo = req.body.password;
+    const passwo = md5(req.body.password);
 
-    loginModel.findById(emailA,(e,response)=>{
-        if(!e)
+    loginModel.findOne({email: emailA},(e,response)=>{
+        if(e)
         {
-            res.redirect("/secrets");   
-        }
-        else{
             console.log(e);
         }
+        
+            else if(response.password===passwo)
+            {
+                res.render("secrets");
+            }
+
+            else
+            {
+                res.render("failure");
+            }
+        
     });
 
     
