@@ -37,9 +37,8 @@ a{
 }
 .nav-link:hover{
     font-weight: 700;
-}
-.footer-padding {
-    padding-bottom: 0%;
+    text-decoration: underline;
+    transition: ease-in;
 }
 
 .footer {
@@ -47,14 +46,11 @@ a{
     text-align: center;
     bottom: 0;
     width: 100%;
-    height: 60px;
     background-color: transparent;
     font-size: 1em;
+    margin-bottom: 1%;
 }
-.footer p {
-    margin-top: 25px;
-    color: beige;
-}
+
 .navbar-toggler {
     border-color: beige !important;
 }

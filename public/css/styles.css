@@ -1,9 +1,7 @@
 body {
     background-color: #e8ecef;
 }
-*>*{
-    font-family: 'Ubuntu Mono', monospace;
-}
+
 .centered {
     padding-top: 200px;
     text-align: center;
