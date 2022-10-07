@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-//mongoose.connect("mongodb+srv://dhrupad_sah:hvdycohKVGEnDtop@cluster0.8gepm9r.mongodb.net/secretsDB2",{useNewUrlParser: true});
-mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://saipranith:HaFkUhxKJsTELFRK@cluster0.htyqh.mongodb.net/usersDB?retryWrites=true&w=majority",{ useNewUrlParser: true })
+// mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
 
 const loginSchema = new mongoose.Schema({
     email: String,
@@ -135,6 +135,9 @@ app.post("/submit",(req,res)=>
 
     res.render("success");
     
+})
+app.get("/home",(req,res)=>{
+    res.render("screen");
 })
 
 app.listen(process.env.PORT||3000, ()=>

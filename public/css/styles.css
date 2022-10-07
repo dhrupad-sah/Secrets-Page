@@ -2,6 +2,7 @@ body {
     background-color: #e8ecef;
 }
 
+
 .centered {
     padding-top: 200px;
     text-align: center;
@@ -28,14 +29,15 @@ body {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: #689cef;
-    font-size: 1em;
+    background-color: hsl(210,10.34%,22.75%);
+
 }
 .footer p {
     margin-top: 25px;
-    font-size: x-large;
+    font-size: large;
     font-family: "Roboto Mono", monospace;
-    color: rgb(14, 11, 11);
+    color: beige;
+ 
 }
 .confessions {
     width: 60%;
@@ -53,4 +55,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+nav a{
+    color:beige !important;
 }
