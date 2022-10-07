@@ -129,10 +129,6 @@ app.get("/logout",(req,res)=>
     res.redirect("/");
 })
 
-app.get("/",(req,res)=>
-{
-    res.render("home");
-});
 
 app.get("/auth/google", (req,res)=>
 {
@@ -192,6 +188,9 @@ app.post("/submit",(req,res)=>
 
     res.render("confessions");
     
+})
+app.get("/",(req,res)=>{
+    res.render("screen");
 })
 
 app.listen(process.env.PORT||3000, ()=>
