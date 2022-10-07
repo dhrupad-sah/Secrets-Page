@@ -17,8 +17,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-mongoose.connect("mongodb+srv://saipranith:HaFkUhxKJsTELFRK@cluster0.htyqh.mongodb.net/usersDB?retryWrites=true&w=majority",{ useNewUrlParser: true })
-// mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/secretsDB",{useNewUrlParser: true});
 
 const loginSchema = new mongoose.Schema({
     email: String,
