@@ -86,7 +86,7 @@ app.post("/register",(req,res)=>{
         else
         {
             passport.authenticate("local")(req,res,()=>{
-                res.redirect("/secrets");
+                res.redirect("/confessions");
             });
         }
     });
@@ -109,7 +109,7 @@ req.login(User, (e)=>{
     else{
         passport.authenticate("local")(req,res,()=>
         {
-            res.redirect("/secrets");
+            res.redirect("/confessions");
         });
     }
 })
@@ -149,7 +149,7 @@ app.get("/auth/google/secrets",
 passport.authenticate("google",{failureRedirect: "/login"}),
 (req,res)=>
 {
-    res.redirect("/secrets")
+    res.redirect("/confessions")
 }
  );
 
@@ -157,7 +157,7 @@ app.get("/confessions",(req,res)=>
 {
     if(req.isAuthenticated())
     {
-        res.render("secrets");
+        res.render("confessions");
     }
     else
     {

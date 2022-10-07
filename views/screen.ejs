@@ -26,9 +26,9 @@
                         '<span aria-hidden="true"></span>';
                     setTimeout(function () {
                         typeWriter(text, i + 1, fnCallback);
-                    }, 100);
+                    }, 50);
                 } else if (typeof fnCallback == "function") {
-                    setTimeout(fnCallback, 700);
+                    setTimeout(fnCallback, 100);
                 }
             }
             function StartTextAnimation(i) {
