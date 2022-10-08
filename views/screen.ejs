@@ -12,7 +12,7 @@
         document.addEventListener("DOMContentLoaded", function (event) {
             var dataText = [
                 " ",
-                "Welcome to the offcial confessions page of IIITS",
+                "Welcome to the offcial confessions page of IIITS 😉",
                 "Express your views and confessions anonymously",
                 "No worries we cannot see your mail id or name",
                 "Your username or mail ID are encrypted",
@@ -26,9 +26,9 @@
                         '<span aria-hidden="true"></span>';
                     setTimeout(function () {
                         typeWriter(text, i + 1, fnCallback);
-                    }, 50);
+                    }, 100);
                 } else if (typeof fnCallback == "function") {
-                    setTimeout(fnCallback, 100);
+                    setTimeout(fnCallback, 500);
                 }
             }
             function StartTextAnimation(i) {

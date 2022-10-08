@@ -26,7 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session())  
 
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/confessionsDB?retryWrites=true&w=majority`,{ useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/SecretsDB?retryWrites=true&w=majority`,{ useNewUrlParser: true })
 app.get("/",(req,res)=>{
     res.render("screen")
 })
@@ -74,10 +74,9 @@ app.get("/register",(req,res)=>{
     res.render("register")
 })
 
-app.get("/secrets",(req,res)=>{
+app.get("/confessions",(req,res)=>{
     if(req.isAuthenticated()){
-        res.render("secrets");
-
+        res.render("confessions");
     }
     else
     res.redirect("/login");
@@ -97,7 +96,7 @@ app.get('/auth/google',
   app.get('/auth/google/secrets', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/secrets');
+    res.redirect('/confessions');
   });
 
 app.post("/register",(req,res)=>{
@@ -133,18 +132,17 @@ app.post("/login",(req,res)=>{
           console.log(err);
         } else {
           passport.authenticate("local")(req, res, function(){
-            res.redirect("/secrets");
+            res.redirect("/confessions");
           });
         }
       });
+
+});
 
 app.get("/faq", (req,res)=>
 {
     res.render("faq");
 })
-
-
-});
 
 
 
