@@ -2,6 +2,16 @@ body {
     background-color: black;
 }
 
+.faq
+{
+    margin-bottom: 0px !important;
+}
+
+.ans
+{
+    margin-top: 0px !important;
+}
+
 .centered {
     padding-top: 200px;
     text-align: center;

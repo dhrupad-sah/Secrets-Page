@@ -138,6 +138,11 @@ app.post("/login",(req,res)=>{
         }
       });
 
+app.get("/faq", (req,res)=>
+{
+    res.render("faq");
+})
+
 
 });
 
