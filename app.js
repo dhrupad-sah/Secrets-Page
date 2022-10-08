@@ -165,6 +165,11 @@ app.get("/confessions",(req,res)=>
     }
 });
 
+app.get("/faq", (req,res)=>
+{
+    res.render("faq");
+})
+
 app.get("/submit", (req,res)=>
 {
     res.render("submit");
