@@ -1,12 +1,16 @@
 body {
-    background-color: #e8ecef;
+    background-color: black;
 }
 
 .centered {
     padding-top: 200px;
     text-align: center;
+    background-color: #000;
+    color: beige;
 }
-
+*>*{
+    font-family: 'Ubuntu Mono', monospace;
+}
 .centered-top {
     text-align: center;
 }
@@ -27,14 +31,12 @@ body {
     text-align: center;
     bottom: 0;
     width: 100%;
-    height: 60px;
-    background-color: hsl(210,10.34%,22.75%);
-
+    background-color: transparent;
+    font-size: 1em;
+    margin-bottom: 1%;
 }
 .footer p {
-    margin-top: 25px;
     font-size: large;
-    font-family: "Roboto Mono", monospace;
     color: beige;
  
 }
@@ -55,7 +57,9 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
+.navbar{
+    background-color: transparent !important;
+}
 nav a{
     color:beige !important;
 }
