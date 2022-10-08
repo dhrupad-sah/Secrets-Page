@@ -26,7 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session())  
 
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/SecretsDB?retryWrites=true&w=majority`,{ useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true })
 app.get("/",(req,res)=>{
     res.render("screen")
 })
