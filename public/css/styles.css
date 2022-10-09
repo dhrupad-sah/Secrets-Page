@@ -10,8 +10,8 @@ body {
     background-color: #000;
     color: beige;
 }
-*>*{
-    font-family: 'Ubuntu Mono', monospace;
+* > * {
+    font-family: "Ubuntu Mono", monospace;
 }
 .centered-top {
     text-align: center;
@@ -40,7 +40,6 @@ body {
 .footer p {
     font-size: large;
     color: beige;
- 
 }
 .confessions {
     width: 60%;
@@ -59,49 +58,54 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.navbar{
+.navbar {
     background-color: transparent !important;
 }
-nav a{
-    color:beige !important;
+nav a {
+    color: beige !important;
 }
-.faq{
+.faq {
     text-align: center;
     margin-top: 1%;
 }
-.navbar-toggler-icon{
-    background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
-.cen{
-    display:flex !important ;
+.cen {
+    display: flex !important ;
     justify-content: center;
 }
-.reg{
+.reg {
     text-align: center;
 }
-.card{
-    background-color:transparent;
+.card {
+    background-color: transparent;
     border: 1px solid slategray;
 }
-input:focus{
+input:focus {
     outline: black;
     border: none;
 }
-.btns{
+.btns {
     text-align: center;
 }
-.google{
+.google {
     border-radius: 7px;
     scale: 0.9;
     background-color: #4082ed;
 }
-.bgoogle{
+.bgoogle {
     font-weight: 700;
     background-color: #4082ed;
     color: #fff;
 }
-.google:hover,.bgoogle:hover{
+.google:hover,
+.bgoogle:hover {
     color: #fff;
     background-color: #1162e2;
+}
+.nav-link:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    transition: ease-in;
 }

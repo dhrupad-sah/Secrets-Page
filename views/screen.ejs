@@ -36,9 +36,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/register">Register</a>
                     </li>
-                    <li class="nav-item active">
+                    <!-- <li class="nav-item active">
                         <a class="nav-link" href="/login">Login</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item active">
                         <a class="nav-link" href="/submit">Submit</a>
                     </li>
@@ -76,16 +76,16 @@
                         '<span aria-hidden="true"></span>';
                     setTimeout(function () {
                         typeWriter(text, i + 1, fnCallback);
-                    }, 200);
+                    }, 150);
                 } else if (typeof fnCallback == "function") {
-                    setTimeout(fnCallback, 500);
+                    setTimeout(fnCallback, 150);
                 }
             }
             function StartTextAnimation(i) {
                 if (typeof dataText[i] == "undefined") {
                     setTimeout(function () {
                         StartTextAnimation(0);
-                    }, 2000);
+                    }, 10);
                 }
                 if (i < dataText[i].length) {
                     typeWriter(dataText[i], 0, function () {
