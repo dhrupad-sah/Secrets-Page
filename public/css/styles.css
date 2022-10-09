@@ -73,3 +73,35 @@ nav a{
     background-image: url(
 "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
+.cen{
+    display:flex !important ;
+    justify-content: center;
+}
+.reg{
+    text-align: center;
+}
+.card{
+    background-color:transparent;
+    border: 1px solid slategray;
+}
+input:focus{
+    outline: black;
+    border: none;
+}
+.btns{
+    text-align: center;
+}
+.google{
+    border-radius: 7px;
+    scale: 0.9;
+    background-color: #4082ed;
+}
+.bgoogle{
+    font-weight: 700;
+    background-color: #4082ed;
+    color: #fff;
+}
+.google:hover,.bgoogle:hover{
+    color: #fff;
+    background-color: #1162e2;
+}

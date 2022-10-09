@@ -76,7 +76,7 @@
                         '<span aria-hidden="true"></span>';
                     setTimeout(function () {
                         typeWriter(text, i + 1, fnCallback);
-                    }, 100);
+                    }, 200);
                 } else if (typeof fnCallback == "function") {
                     setTimeout(fnCallback, 500);
                 }
@@ -85,7 +85,7 @@
                 if (typeof dataText[i] == "undefined") {
                     setTimeout(function () {
                         StartTextAnimation(0);
-                    }, 20000);
+                    }, 2000);
                 }
                 if (i < dataText[i].length) {
                     typeWriter(dataText[i], 0, function () {
