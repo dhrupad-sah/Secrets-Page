@@ -29,7 +29,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);  
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/test?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
 
 
 // mongoose.connect("mongodb://localhost:27017", {useNewUrlParser: true,useUnifiedTopology: true});
