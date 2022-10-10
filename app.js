@@ -32,7 +32,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
 
 
-// mongoose.connect("mongodb://localhost:27017", {useNewUrlParser: true,useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost:27017/check", {useNewUrlParser: true,useUnifiedTopology: true});
 app.get("/",(req,res)=>{
     res.render("screen")
 })
@@ -69,7 +69,7 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    User.findOrCreate({ googleId: profile.id,username: profile.id}, function (err, user) {
       return cb(err, user);
     });
   }
