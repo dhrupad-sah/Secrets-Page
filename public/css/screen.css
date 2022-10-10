@@ -49,6 +49,7 @@ a{
     background-color: transparent;
     font-size: 1em;
     margin-bottom: 1%;
+    z-index: 1000;
 }
 
 .navbar-toggler {

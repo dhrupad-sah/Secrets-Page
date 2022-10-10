@@ -9,7 +9,7 @@ const session=require("express-session");
 const passport=require("passport");
 const passportLocalMongoose=require("passport-local-mongoose");
 const GoogleStrategy=require("passport-google-oauth20").Strategy;
-const findOrCreate=require("mongoose-findorcreate");
+const findOrCreate = require("mongoose-findorcreate");
 
 app.use(express.static("public"));
 app.set("view engine","ejs");
@@ -18,20 +18,24 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   }));
 
 app.use(passport.initialize());
 app.use(passport.session())  
 
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true })
-app.get("/",(req,res)=>{
-    res.render("screen")
-})
+mongoose.connect("mongodb://localhost:27017/test");
+// mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{useNewUrlParser: true, useUnifiedTopology: true})
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
 
 const userSchema=new mongoose.Schema({
     email:String,
-    password:String
+    password:String,
+    googleId:String
 })
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
@@ -42,6 +46,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
+
   
   passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
@@ -63,6 +68,11 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
+
+app.get("/",(req,res)=>{
+  res.render("screen")
+})
+
 
 app.get("/login",(req,res)=>{
     res.render("login")

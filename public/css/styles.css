@@ -26,6 +26,7 @@ body {
 
 .footer-padding {
     padding-bottom: 0%;
+    background-color: #000;
 }
 
 .footer {
@@ -35,11 +36,13 @@ body {
     width: 100%;
     background-color: transparent;
     font-size: 1em;
-    margin-bottom: 1%;
+    background-color: #000;
+    z-index: 1000;
 }
 .footer p {
     font-size: large;
     color: beige;
+    background-color: #000;
 }
 .confessions {
     width: 60%;
