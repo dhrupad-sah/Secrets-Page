@@ -24,12 +24,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session())  
 
-//mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/test?retryWrites=true&w=majority`,{ useNewUrlParser: true })
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect("mongodb://localhost:27017", {useNewUrlParser: true,useUnifiedTopology: true});
+//mongoose.connect("mongodb://localhost:27017/secretsDB", {useNewUrlParser: true,useUnifiedTopology: true});
 app.get("/",(req,res)=>{
     res.render("screen")
 })
