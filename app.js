@@ -24,25 +24,29 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session())  
 
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/test3?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);  
 mongoose.set('useCreateIndex', true);
-
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
-
-
-// mongoose.connect("mongodb://localhost:27017/check", {useNewUrlParser: true,useUnifiedTopology: true});
+//mongoose.connect("mongodb://localhost:27017/secretsDB", {useNewUrlParser: true,useUnifiedTopology: true});
 app.get("/",(req,res)=>{
     res.render("screen")
-})
+});
+
+const secretsSchema = new mongoose.Schema({
+  secrets:String
+});
 
 
 const userSchema=new mongoose.Schema({
     email:String,
     password:String,
     googleId:String
-})
+});
+
+const secretsModel = new mongoose.model("secretsModel", secretsSchema);
+
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
@@ -75,10 +79,20 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+
 app.get("/",(req,res)=>{
   res.render("screen")
 })
 
+app.get("/guidelines",(req,res)=>
+{
+  res.render("guidelines");
+})
+
+app.get("/contactus",(req,res)=>
+{
+  res.render("contactus")
+})
 
 app.get("/login",(req,res)=>{
     res.render("login")
@@ -133,6 +147,10 @@ app.post("/register",(req,res)=>{
     
 })
 
+app.post("/submit", (req,res)=>{
+  res.render("success");
+})
+
 app.post("/login",(req,res)=>{
 
     
@@ -152,6 +170,18 @@ app.post("/login",(req,res)=>{
       });
 
 });
+
+app.post("/confessions",(req,res)=>
+{
+    const secretins = new secretsModel({
+        secrets: req.body.secret
+    })
+    
+    secretins.save();
+
+    res.render("success");
+    
+})
 
 app.get("/faq", (req,res)=>
 {
