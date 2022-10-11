@@ -17,6 +17,17 @@ body {
     text-align: center;
 }
 
+.success
+{
+    color: #000;
+}
+
+.successmsg
+{
+    color: #000;
+    font-size: 2rem;
+}
+
 .secret-text {
     text-align: center;
     font-size: 2rem;
@@ -71,6 +82,13 @@ nav a {
     text-align: center;
     margin-top: 1%;
 }
+
+.faqcontact {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 2rem;
+}
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
@@ -80,6 +98,22 @@ nav a {
 }
 .reg {
     text-align: center;
+}
+
+.guidelineshead
+{
+    font-size: x-large;
+    margin-bottom: 35px;
+}
+
+.bullet-padding
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.regq {
+    text-align: right;
 }
 .card {
     background-color: transparent;
@@ -92,6 +126,16 @@ input:focus {
 .btns {
     text-align: center;
 }
+
+.btnsq {
+    text-align: left;
+}
+
+.qwert
+{
+    padding-top: 1px;
+}
+
 .google {
     border-radius: 7px;
     scale: 0.9;
