@@ -24,7 +24,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session())  
 
-mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/test3?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);  
@@ -96,6 +96,11 @@ app.get("/contactus",(req,res)=>
 
 app.get("/login",(req,res)=>{
     res.render("login")
+})
+
+app.get("/faq", (req,res)=>
+{
+    res.render("faq");
 })
 
 app.get("/register",(req,res)=>{
@@ -171,21 +176,16 @@ app.post("/login",(req,res)=>{
 
 });
 
-app.post("/confessions",(req,res)=>
+app.post("/",(req,res)=>
 {
+    console.log(req.body.secret);
     const secretins = new secretsModel({
         secrets: req.body.secret
     })
     
     secretins.save();
-
     res.render("success");
     
-})
-
-app.get("/faq", (req,res)=>
-{
-    res.render("faq");
 })
 
 
