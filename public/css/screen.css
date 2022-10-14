@@ -9,12 +9,10 @@
 body{
     background-color: rgb(0, 0, 0);
     color: beige;
-    overflow-x: hidden;
 }
 .navbar{
     background-color: transparent !important;
     padding: 1% 2%;
-    position: fixed;
 }
 h1{
     text-align: center;
@@ -32,7 +30,7 @@ a{
 }
 .chd{
     display: flex;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
