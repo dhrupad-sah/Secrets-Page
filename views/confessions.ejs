@@ -3,4 +3,14 @@
    <h1>These are the recent confessions....</h1>
 </div>
 
+<% for(let i=0;i<users.length;i++){ %>
+   <% if(users[i].secrets){ %>
+   <div>
+      <p><%= date %> / <%= month %> / <%= year %></p>
+      <p class="mainsec"><%= users[i].secrets %></p>
+      <br><br>
+   </div>
+<% }} %>
+
+
 <%- include('partials/footer') %>

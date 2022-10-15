@@ -39,6 +39,7 @@ const secretsSchema = new mongoose.Schema({
 });
 
 
+
 const userSchema=new mongoose.Schema({
     email:String,
     password:String,
@@ -80,6 +81,9 @@ passport.use(new GoogleStrategy({
 ));
 
 
+
+// .getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
 app.get("/",(req,res)=>{
   res.render("screen")
 })
@@ -108,11 +112,23 @@ app.get("/register",(req,res)=>{
 })
 
 app.get("/confessions",(req,res)=>{
-    if(req.isAuthenticated()){
-        res.render("confessions");
+
+    if(req.isAuthenticated())
+    {
+      n =  new Date();
+      y = n.getFullYear();
+      m = n.getMonth() + 1;
+      d = n.getDate();
+
+      secretsModel.find({}, (e,users)=>
+      {
+        res.render("confessions",{users: users, date:d, month:m,year:y});
+      }); 
+
     }
     else
     res.redirect("/login");
+
 })
 
 app.get("/logout",(req,res)=>{
