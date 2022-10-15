@@ -4,6 +4,10 @@
     src: url("fonts/f1.ttf");
 }
 
+.anonymous
+{
+    font-size: 3em;
+}
 
 body {
     background-color: black;
