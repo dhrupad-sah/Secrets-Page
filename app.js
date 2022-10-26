@@ -150,9 +150,6 @@ app.get('/auth/google',
   });
 
 app.post("/register",(req,res)=>{
-    
-   
-
     User.register({username:req.body.username},req.body.password,(err,user)=>{
 
         if(err){
