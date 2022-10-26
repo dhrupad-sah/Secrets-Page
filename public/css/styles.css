@@ -58,7 +58,8 @@ body {
 }
 
 .footer {
-    position: fixed;
+    margin-top: 17%;
+    position: relative;
     text-align: center;
     bottom: 0;
     width: 100%;
