@@ -25,20 +25,18 @@ app.use(passport.initialize());
 app.use(passport.session())  
 
 mongoose.connect(`mongodb+srv://saipranith:${process.env.DB_PWD}@cluster0.htyqh.mongodb.net/Secret?retryWrites=true&w=majority`,{ useNewUrlParser: true,useUnifiedTopology: true })
-
+// mongoose.connect("mongodb://localhost:27017/secretsDB", {useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);  
 mongoose.set('useCreateIndex', true);
-//mongoose.connect("mongodb://localhost:27017/secretsDB", {useNewUrlParser: true,useUnifiedTopology: true});
 app.get("/",(req,res)=>{
     res.render("screen")
 });
 
 const secretsSchema = new mongoose.Schema({
-  secrets:String
+  secrets:String,
+  Date:String,
 });
-
-
 
 const userSchema=new mongoose.Schema({
     email:String,
@@ -79,11 +77,6 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-//iiits-secrets-anonymous
-
-
-
-// .getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
 app.get("/",(req,res)=>{
   res.render("screen")
@@ -116,20 +109,13 @@ app.get("/confessions",(req,res)=>{
 
     if(req.isAuthenticated())
     {
-      n =  new Date();
-      y = n.getFullYear();
-      m = n.getMonth() + 1;
-      d = n.getDate();
-
       secretsModel.find({}, (e,users)=>
       {
-        res.render("confessions",{users: users, date:d, month:m,year:y});
+        res.render("confessions",{users: users});
       }); 
-
     }
     else
     res.redirect("/login");
-
 })
 
 app.get("/logout",(req,res)=>{
@@ -194,7 +180,8 @@ app.post("/",(req,res)=>
 {
     console.log(req.body.secret);
     const secretins = new secretsModel({
-        secrets: req.body.secret
+        secrets: req.body.secret,
+        Date: new Date().toLocaleDateString()
     })
     
     secretins.save();
